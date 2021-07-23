@@ -12,10 +12,10 @@ const Settings: LayoutSettings & {
   fixedHeader: false,
   fixSiderbar: true,
   colorWeak: false,
-  title: '投放数据看板',
+  title: '后台管理系统',
   pwa: false,
   logo: 'https://p2-static.oss-cn-beijing.aliyuncs.com/sjzt/img/doujia-logo.png',
-  iconfontUrl: '',
+  iconfontUrl: '//at.alicdn.com/t/font_911845_v0mtyvvk0f.js',
 };
 
 export default Settings;

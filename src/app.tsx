@@ -1,6 +1,7 @@
 import RightContent from '@/components/RightContent';
+import Footer from '@/components/Footer';
 import type { Settings as LayoutSettings } from '@ant-design/pro-layout';
-import { DefaultFooter, PageLoading } from '@ant-design/pro-layout';
+import { PageLoading } from '@ant-design/pro-layout';
 import { notification } from 'antd';
 import type { RequestConfig, RunTimeLayoutConfig } from 'umi';
 import { history } from 'umi';
@@ -64,24 +65,6 @@ export async function getInitialState(): Promise<{
     502: '网关错误。',
     503: '服务不可用，服务器暂时过载或维护。',
     504: '网关超时。',
- //-----English
-    200: The server successfully returned the requested data. ',
-    201: New or modified data is successful. ',
-    202: A request has entered the background queue (asynchronous task). ',
-    204: Data deleted successfully. ',
-    400: 'There was an error in the request sent, and the server did not create or modify data. ',
-    401: The user does not have permission (token, username, password error). ',
-    403: The user is authorized, but access is forbidden. ',
-    404: The request sent was for a record that did not exist. ',
-    405: The request method is not allowed. ',
-    406: The requested format is not available. ',
-    410':
-        'The requested resource is permanently deleted and will no longer be available. ',
-    422: When creating an object, a validation error occurred. ',
-    500: An error occurred on the server, please check the server. ',
-    502: Gateway error. ',
-    503: The service is unavailable. ',
-    504: The gateway timed out. ',
  * @see https://beta-pro.ant.design/docs/request-cn
  */
 export const request: RequestConfig = {
@@ -101,14 +84,14 @@ export const request: RequestConfig = {
 // ProLayout 支持的api https://procomponents.ant.design/components/layout
 export const layout: RunTimeLayoutConfig = ({ initialState }) => {
   return {
-    iconfontUrl: '//at.alicdn.com/t/font_911845_v0mtyvvk0f.js',
+    // iconfontUrl: '//at.alicdn.com/t/font_911845_v0mtyvvk0f.js',//改到defaultsetting里面
     rightContentRender: () => <RightContent />,
     disableContentMargin: false,
+    pageTitleRender: false,
     waterMarkProps: {
       content: initialState?.currentUser?.name,
     },
-    footerRender: () => <p>安徽豆荚网络科技有限公司</p>,
-    // footerRender: () => <DefaultFooter copyright={`2020 安徽豆荚网络科技有限公司`} />,
+    footerRender: () => <Footer />,
     onPageChange: () => {
       const { location } = history;
       // 如果没有登录，重定向到 login

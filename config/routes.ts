@@ -6,7 +6,7 @@ export default [
       { path: '/user', routes: [{ name: '登录', path: '/user/login', component: './user/Login' }] },
     ],
   },
-  { path: '/welcome', name: '欢迎', icon: 'smile', component: './Welcome' },
+  { path: '/welcome', name: '首页', icon: 'home', component: './Welcome' },
   { path: '/newpage', name: '新页面', icon: 'icon-yonghuguanli1', component: './NewPage' },
   {
     path: '/admin',
